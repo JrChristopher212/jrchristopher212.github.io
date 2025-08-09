@@ -16,16 +16,22 @@
   --muted: #B8A77D;    /* soft muted gold/tan */
   --ring: #f7c94844;   /* golden glow */
 }
-    .masthead{
-  /* show the WHOLE image, no crop */
-  background: var(--bg) url('header-bg.png') no-repeat center top / contain;
-
-  min-height: 260px;          /* make shorter/taller here */
+  .masthead {
+  background-color: var(--bg);
+  background-image: url('header-bg.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% auto;   /* full width, keep image height proportion */
+  
+  min-height: auto;             /* let height follow image */
+  aspect-ratio: 5 / 1;           /* keeps the shape proportional */
+  
   display: flex;
-  align-items: flex-start;     /* keep nav at the top */
-  justify-content: center;     /* centers the header horizontally */
+  align-items: flex-start;
+  justify-content: center;
   box-shadow: 0 6px 24px #0006;
 }
+
 .masthead .container{ padding: 10px 0; }
 
 
