@@ -16,17 +16,18 @@
   --muted: #B8A77D;    /* soft muted gold/tan */
   --ring: #f7c94844;   /* golden glow */
 }
-.masthead{
-  background-image: url('header-bg.png');
-  background-size: 80%;           /* fill the width (no letterboxing) */
-  background-position: 55% center top;  /* nudge view so bees + hive fit nicely */
-  background-repeat: no-repeat;
-  min-height: 250px;                /* adjust taller/shorter if you like */
+    .masthead{
+  /* show the WHOLE image, no crop */
+  background: var(--bg) url('header-bg.png') no-repeat center top / contain;
+
+  min-height: 260px;          /* make shorter/taller here */
   display: flex;
-  align-items: flex-start;          /* put header at the TOP of the banner */
+  align-items: flex-start;     /* keep nav at the top */
+  justify-content: center;     /* centers the header horizontally */
   box-shadow: 0 6px 24px #0006;
 }
-.masthead .container{ padding: 16px 28px; }
+.masthead .container{ padding: 10px 0; }
+
 
 /* make the nav readable over the image */
 .masthead nav a{ color: var(--text); }
