@@ -19,33 +19,41 @@
 /* Full-width, no vertical squish; scales with screen */
 
 .masthead{
+  position: relative;
   width: 100%;
-  background-image: url('header-bg.png');
-  background-repeat: no-repeat;
-  background-size: 46% auto;         
-  background-position: center; 
-  min-height: 420px;               /* desktop height */
+  min-height: 420px;
+
+  /* TWO background layers: left panel, then your main header art */
+  background-image: url('header-left.png'), url('header-bg.png');
+  background-repeat: no-repeat, no-repeat;
+  background-size: 34% auto, 46% auto;   /* left %, right % – tweak as you like */
+  background-position: left center, right center;
+
   display: flex;
-  align-items: flex-start;         /* keep nav near top */
+  align-items: flex-start;
   justify-content: center;
   box-shadow: 0 6px 24px #0006;
 }
-.masthead .container{ padding: 8px 0; }
+
 
 /* Large laptops/tablets */
 @media (max-width: 1200px){
-  .masthead{ min-height: 380px; }
+  .masthead{
+    min-height: 380px;
+    background-size: 38% auto, 50% auto;
+  }
 }
 
 /* Phones */
 @media (max-width: 700px){
   .masthead{
     min-height: 300px;
-    background-position: 55% center; /* slight nudge right on mobile */
+    /* On very small screens, just show the main image */
+    background-image: url('header-bg.png');
+    background-size: 65% auto;
+    background-position: 55% center;
   }
 }
-
-.masthead .container{ padding: 10px 0; }
 
 
 /* make the nav readable over the image */
