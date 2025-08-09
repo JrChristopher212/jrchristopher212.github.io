@@ -17,32 +17,37 @@
   --ring: #f7c94844;   /* golden glow */
 }
 /* Full-width, no vertical squish; scales with screen */
+@media (max-width: 1200px){
+ /* === MASTHEAD: full image, no cropping, responsive === */
 .masthead{
   width: 100%;
-  background: var(--bg) url('header-bg.png') no-repeat center top / 100% auto;
-  aspect-ratio: 16 / 4;      /* ~4:1 strip; controls height by width */
+  background: var(--bg) url('header-bg.png') no-repeat center center;
+  background-size: contain;   /* show the WHOLE image */
+  min-height: 460px;          /* desktop height */
   display: flex;
-  align-items: flex-start;    /* keep nav at top */
+  align-items: flex-start;     /* keep nav near top */
   justify-content: center;
   box-shadow: 0 6px 24px #0006;
 }
-
-/* Keep nav snug; no extra vertical padding */
 .masthead .container{ padding: 6px 0; }
 
-/* Laptop/tablet: make the strip a touch taller */
+/* Large laptops/tablets */
 @media (max-width: 1200px){
   .masthead{
-    aspect-ratio: 16 / 5;    /* a bit taller so details aren’t tiny */
+    min-height: 380px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 
-/* Mobile: keep full width but zoom a little so key bits stay visible */
+/* Phones */
 @media (max-width: 700px){
   .masthead{
-    aspect-ratio: 16 / 6;           /* taller on phones */
-    background-size: 140% auto;     /* gentle zoom so logo/bee/hive show */
-    background-position: 55% top;   /* nudge focus to center-right */
+    min-height: 300px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 
