@@ -16,6 +16,17 @@
   --muted: #B8A77D;    /* soft muted gold/tan */
   --ring: #f7c94844;   /* golden glow */
 }
+    .masthead{
+  background-image: url('header-bg.png');
+  background-size: cover;
+  background-position: center right;
+  min-height: 300px;           /* tweak height if you want taller/shorter */
+  display: flex;
+  align-items: center;         /* vertically centers the header */
+  box-shadow: 0 6px 24px #0006;
+}
+.masthead .container{ padding: 18px 28px; } /* keeps your existing spacing */
+
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
@@ -123,21 +134,28 @@ p a:hover{ color:var(--accent); text-decoration:underline }
   </style>
 </head>
 <body>
+
+  <!-- Banner with your header over it -->
+  <div class="masthead">
+    <div class="container">
+      <header>
+        <div class="brand">
+          <img src="Logo%20no%20background.jpeg" alt="SpiritAndPollen logo" style="height:40px; width:auto;" />
+          SpiritAndPollen
+        </div>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#mission">Mission</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+    </div>
+  </div>
+
+  <!-- Normal page content starts here -->
   <div class="container">
-    <header>
-      <div class="brand">
-  <img src="Logo%20no%20background.jpeg" alt="SpiritAndPollen logo" style="height:40px; width:auto;" />
-  SpiritAndPollen
-</div>
-
-      <nav>
-        <a href="#about">About</a>
-        <a href="#mission">Mission</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
-
     <main>
+
       <section class="hero">
         <span class="badge">Creative Studio</span>
         <h1>Thoughtful, warm, and creative digital experiences.</h1>
