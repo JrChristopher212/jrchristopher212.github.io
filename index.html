@@ -18,22 +18,37 @@
 }
 /* Full-width, no vertical squish; scales with screen */
 /* Large laptops/tablets */
-@media (max-width: 1200px){
- /* === MASTHEAD — full width, fits height, no tiny center box === */
+/* === MASTHEAD — full width, fills height, no conflicts === */
 .masthead{
   width: 100%;
   background-image: url('header-bg.png');
   background-repeat: no-repeat;
-  background-size: cover;         /* fill the header, no letterboxing */
-  background-position: 50% center;/* slide left/right by changing 50% */
-  min-height: 420px;              /* header height on desktop */
+  background-size: cover;          /* fill the header area */
+  background-position: 50% center; /* slide left/right by changing 50% */
+  min-height: 420px;               /* desktop height */
   display: flex;
   align-items: flex-start;         /* keep nav near top */
   justify-content: center;
   box-shadow: 0 6px 24px #0006;
 }
-.masthead .container{ padding: 6px 0; }
+.masthead .container{ padding: 8px 0; }
 
+/* Large laptops/tablets */
+@media (max-width: 1200px){
+  .masthead{ min-height: 380px; }
+}
+
+/* Phones */
+@media (max-width: 700px){
+  .masthead{
+    min-height: 300px;
+    background-position: 55% center; /* slight nudge right on mobile */
+  }
+}
+
+/* make the nav readable over the image */
+.masthead nav a{ color: var(--text); }
+.masthead nav a:hover{ color: var(--accent); }
 /* Large laptops/tablets */
 @media (max-width: 1200px){
   .masthead{ min-height: 380px; }
